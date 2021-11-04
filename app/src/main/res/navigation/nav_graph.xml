@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.delnortedevs.mynavigation.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_primeroFragment"
+            app:destination="@id/primeroFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_segundoFragment"
+            app:destination="@id/segundoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cuartoFragment"
+        android:name="com.delnortedevs.mynavigation.CuartoFragment"
+        android:label="fragment_cuarto"
+        tools:layout="@layout/fragment_cuarto" >
+        <action
+            android:id="@+id/action_cuartoFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/primeroFragment"
+        android:name="com.delnortedevs.mynavigation.PrimeroFragment"
+        android:label="fragment_primero"
+        tools:layout="@layout/fragment_primero" >
+        <action
+            android:id="@+id/action_primeroFragment_to_cuartoFragment"
+            app:destination="@id/cuartoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/segundoFragment"
+        android:name="com.delnortedevs.mynavigation.SegundoFragment"
+        android:label="fragment_segundo"
+        tools:layout="@layout/fragment_segundo" >
+        <action
+            android:id="@+id/action_segundoFragment_to_terceroFragment"
+            app:destination="@id/terceroFragment" />
+        <argument
+            android:name="departamento"
+            app:argType="string" />
+        <argument
+            android:name="nombre"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/terceroFragment"
+        android:name="com.delnortedevs.mynavigation.TerceroFragment"
+        android:label="fragment_tercero"
+        tools:layout="@layout/fragment_tercero" />
+</navigation>
